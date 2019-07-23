@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.stu.manage.demo.mapper.ScoreMapper">
+<!--    <select id="getByExamId" parameterType="Integer" resultType="com.stu.manage.demo.entity.Score">-->
+<!--        select * from score-->
+<!--        where exam_id=#{examId} and is_valid=1-->
+<!--    </select>-->
+<!--    <select id="getAllScore"  resultType="com.stu.manage.demo.entity.Score">-->
+<!--        select * from score-->
+<!--        where is_valid=1-->
+<!--    </select>-->
+<!--    <select id="getByStudentId" parameterType="Integer" resultType="com.stu.manage.demo.entity.Score">-->
+<!--        select * from score-->
+<!--        where student_id=#{studentId} and is_valid=1-->
+<!--    </select>-->
+<!--    <select id="getByEsId" parameterType="Integer" resultType="com.stu.manage.demo.entity.Score">-->
+<!--        select * from score-->
+<!--        where exam_id=#{examId} and student_id=#{studentId}-->
+<!--    </select>-->
+<!--    <select id="getByGradeClass" parameterType="com.stu.manage.demo.entity.GradeClass" resultType="com.stu.manage.demo.entity.Score">-->
+<!--        select * from score-->
+<!--        where class_id=#{classId} and grade_id=#{gradeId} and is_valid=1-->
+<!--    </select>-->
+<!--    <select id="getBygradeID" parameterType="String" resultType="com.stu.manage.demo.entity.Score">-->
+<!--        select * from score-->
+<!--        where grade_id=#{gradeId} and is_valid=1-->
+<!--    </select>-->
+    <!--    <update id="updateScore" parameterType="com.stu.manage.demo.entity.Score">-->
+    <!--        update score set-->
+    <!--        exam_information=#{examInformation},-->
+    <!--        student_id=#{studentId},-->
+    <!--        student_name=#{studentName},-->
+    <!--        grade_id=#{gradeId},-->
+    <!--        class_id=#{classId},-->
+    <!--        chinese_score=#{chineseScore},-->
+    <!--        math_score=#{mathScore},-->
+    <!--        english_score=#{englishScore},-->
+    <!--        composite_score=#{compositeScore}-->
+    <!--        where exam_id=#{examId} and is_valid=1-->
+    <!--    </update>-->
+
+    <update id="deleteExam" parameterType="Integer">
+        update score set
+        is_valid = '0'
+        where exam_id=#{examId} and is_valid=1
+    </update>
+
+    <update id="deleteStudent" parameterType="Integer">
+        update score set
+        is_valid = '0'
+        where student_id=#{studentId} and is_valid=1
+    </update>
+
+</mapper>
